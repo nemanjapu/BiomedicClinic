@@ -36,10 +36,23 @@ $(document).ready(function () {
             }
         },
     });
-    new TypeIt('.banner-text-con .banner-text h1', {
-        speed: 50,
-        cursor: false
-    }).go();
+    //new TypeIt('.banner-text-con .banner-text h1', {
+    //    speed: 50,
+    //    cursor: false
+    //}).go();
+    var myText = "the biomedic is a medical centre for bioregulatory medicine.";
+    var myWords = myText.split(" ").reverse();
+
+    var ntrvl = setInterval(function () {
+        addNextWord();
+    }, 700);
+    function addNextWord() {
+        var nextWord = myWords.pop();
+        if (nextWord !== undefined) {
+            var textNow = $(".banner-text-con .banner-text h1").text() + " " + nextWord;
+            $(".banner-text-con .banner-text h1").text(textNow);
+        }
+    }
 });
 
 $(document).scroll(function () {

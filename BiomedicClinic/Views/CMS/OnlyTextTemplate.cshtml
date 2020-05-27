@@ -39,37 +39,48 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-xl-6 col-lg-8">
-                        <article class="page-content">
-                            @Html.Raw(Model.Content1)
-                        </article>
-                    </div>
-                    <div class="col-xl-6 col-lg-4">
-                        <aside class="related-pages">
-                            @foreach (var page in Model.RelatedPages)
-                            {
-                                string pageNewTab = "";
-                                string pageUrl = "";
-                                if (page.OpenPageInNewTab)
+                    @if (Model.RelatedPages.Count() > 0)
+                    {
+                        <div class="col-xl-6 col-lg-8">
+                            <article class="page-content">
+                                @Html.Raw(Model.Content1)
+                            </article>
+                        </div>
+                        <div class="col-xl-6 col-lg-4">
+                            <aside class="related-pages">
+                                @foreach (var page in Model.RelatedPages)
                                 {
-                                    pageNewTab = "target='_blank'";
+                                    string pageNewTab = "";
+                                    string pageUrl = "";
+                                    if (page.OpenPageInNewTab)
+                                    {
+                                        pageNewTab = "target='_blank'";
+                                    }
+                                    else
+                                    {
+                                        pageNewTab = "";
+                                    }
+                                    if (string.IsNullOrEmpty(page.PageExternalUrl))
+                                    {
+                                        pageUrl = page.PageUrl;
+                                    }
+                                    else
+                                    {
+                                        pageUrl = page.PageExternalUrl;
+                                    }
+                                    <a href="@pageUrl" @pageNewTab>@page.MenuName</a>
                                 }
-                                else
-                                {
-                                    pageNewTab = "";
-                                }
-                                if (string.IsNullOrEmpty(page.PageExternalUrl))
-                                {
-                                    pageUrl = page.PageUrl;
-                                }
-                                else
-                                {
-                                    pageUrl = page.PageExternalUrl;
-                                }
-                                <a href="@pageUrl" @pageNewTab>@page.MenuName</a>
-                            }
-                        </aside>
-                    </div>
+                            </aside>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="col-xl-10">
+                            <article class="page-content page-content-xl">
+                                @Html.Raw(Model.Content1)
+                            </article>
+                        </div>
+                    }
                 </div>
             </div>
         </div>
