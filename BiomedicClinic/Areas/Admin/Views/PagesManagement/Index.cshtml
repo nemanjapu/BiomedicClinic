@@ -1,0 +1,120 @@
+﻿@model IEnumerable<BiomedicClinic.Areas.Admin.ViewModels.WebsitePagesAdminViewModel>
+@{
+    ViewBag.Title = "Pages Management";
+}
+
+@Html.Partial("_AddPagePartial")
+
+<section role="main" class="content-body">
+    <header class="page-header">
+        <h2>Pages Management</h2>
+    </header>
+
+    <!-- start: page -->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xl-6">
+                <section class="card">
+                    <header class="card-header">
+                        <div class="card-actions">
+                            <a href="#" class="card-action card-action-toggle" data-card-toggle=""></a>
+                            <a href="#" class="card-action card-action-dismiss" data-card-dismiss=""></a>
+                        </div>
+
+                        <h2 class="card-title">Top Menu</h2>
+                    </header>
+                    <div class="card-body" style="display: block;">
+                        <table class="table table-responsive-md mb-0">
+                            <thead>
+                                <tr>
+                                    <th>Page Name</th>
+                                    @*<th>Sort Order</th>*@
+                                    <th>Template</th>
+                                    <th>Parent</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                @foreach (var page in Model)
+                                {
+                                    if (page.MenuId == 1)
+                                    {
+                                        <tr>
+                                            <td>@page.MenuName</td>
+                                            @*<td>@page.SortOrder</td>*@
+                                            <td>@page.Template</td>
+                                            <td>@page.ParentName</td>
+                                            <td class="actions">
+                                                <a href="@Url.Action("EditWebsitePage", "PagesManagement", new { @id = page.Id })"><i class="fas fa-pencil-alt"></i></a>
+                                                <a href="" class="delete-row"><i class="far fa-trash-alt"></i></a>
+                                            </td>
+                                        </tr>
+                                    }
+                                }
+                            </tbody>
+                        </table>
+                        <div class="pt-3">
+                            <button type="button" data-menuid="1" class="btn btn-primary d-block add-page-modal-btn" data-toggle="modal" data-target="#AddNewWebsitePage">
+                                Add New Page
+                            </button>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div class="col-xl-6">
+                <section class="card">
+                    <header class="card-header">
+                        <div class="card-actions">
+                            <a href="#" class="card-action card-action-toggle" data-card-toggle=""></a>
+                            <a href="#" class="card-action card-action-dismiss" data-card-dismiss=""></a>
+                        </div>
+
+                        <h2 class="card-title">Side Menu</h2>
+                    </header>
+                    <div class="card-body" style="display: block;">
+                        <table class="table table-responsive-md mb-0">
+                            <thead>
+                                <tr>
+                                    <th>Page Name</th>
+                                    @*<th>Sort Order</th>*@
+                                    <th>Template</th>
+                                    <th>Parent</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var page in Model)
+                                {
+                                    if (page.MenuId == 2)
+                                    {
+                                        <tr>
+                                            <td>@page.MenuName</td>
+                                            @*<td>@page.SortOrder</td>*@
+                                            <td>@page.Template</td>
+                                            <td>@page.ParentName</td>
+                                            <td class="actions">
+                                                <a href="@Url.Action("EditWebsitePage", "PagesManagement", new { @id = page.Id })"><i class="fas fa-pencil-alt"></i></a>
+                                                <a href="" class="delete-row"><i class="far fa-trash-alt"></i></a>
+                                            </td>
+                                        </tr>
+                                    }
+                                }
+                            </tbody>
+                        </table>
+                        <div class="pt-3">
+                            <button type="button" data-menuid="2" class="btn btn-primary d-block add-page-modal-btn" data-toggle="modal" data-target="#AddNewWebsitePage">
+                                Add New Page
+                            </button>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+    <!-- end: page -->
+</section>
+
+@section scripts{
+    <script src="~/Areas/Admin/Content/js/website-pages.js"></script>
+}

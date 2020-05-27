@@ -1,0 +1,83 @@
+﻿@model IEnumerable<BiomedicClinic.Core.Models.WebsitePage>
+<div class="secondary-nav-con" data-aos="fade-right" id="secondaryNav">
+    <button class="navbar-toggler mr-auto" id="secondaryNavClose">
+        <i class="fas fa-times"></i> CLOSE
+    </button>
+    <a href="/editor/CMSEditor/ReturnCMSPageEdit/" class="d-xl-block mb-4 nav-logo">
+        <img src="~/Content/images/logo.png" alt="Biomedic Clinic">
+    </a>
+    <nav class="navbar">
+        <div class="navbar">
+            <ul class="navbar-nav">
+                @foreach (var page in Model)
+                {
+                    if (page.ParentId == 0 && !page.isHidden)
+                    {
+                        <li class="nav-item">
+                            @{
+                                string pageNewTab = "";
+                                string pageUrl = "";
+                                string subpageUrl = "";
+                            }
+                            @if (page.OpenPageInNewTab)
+                            {
+                                pageNewTab = "target='_blank'";
+                            }
+                            else
+                            {
+                                pageNewTab = "";
+                            }
+                            @if (string.IsNullOrEmpty(page.PageExternalUrl))
+                            {
+                                pageUrl = "/editor/CMSEditor/ReturnCMSPageEdit" + page.PageUrl;
+                            }
+                            else
+                            {
+                                pageUrl = page.PageExternalUrl;
+                            }
+
+                            <a href="@pageUrl" @pageNewTab>
+                                <span class="nav-link">
+                                    @page.MenuName
+                                </span>
+                            </a>
+
+                            @foreach (var subpage in Model)
+                            {
+                                string subpageNewTab = "";
+                                if (subpage.OpenPageInNewTab)
+                                {
+                                    subpageNewTab = "target='_blank'";
+                                }
+                                else
+                                {
+                                    subpageNewTab = "";
+                                }
+                                if (subpage.ParentId == page.Id && !subpage.isHidden)
+                                {
+                                    if (string.IsNullOrEmpty(subpage.PageExternalUrl))
+                                    {
+                                        subpageUrl = "/editor/CMSEditor/ReturnCMSPageEdit" + subpage.PageUrl;
+                                    }
+                                    else
+                                    {
+                                        subpageUrl = subpage.PageExternalUrl;
+                                    }
+                                    <a class="nav-link" @subpageNewTab href="@subpageUrl">@subpage.MenuName</a>
+                                }
+                            }
+                        </li>
+                    }
+                }
+            </ul>
+        </div>
+    </nav>
+    <img src="~/Content/images/logo2.png" alt="VIS MEDICATRIX NATURAE - Internation Society for Bioregulatory Medicine">
+    <div class="social-block pt-4">
+        <a href="" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+        <a href="" target="_blank"><i class="fab fa-youtube"></i></a>
+    </div>
+</div>

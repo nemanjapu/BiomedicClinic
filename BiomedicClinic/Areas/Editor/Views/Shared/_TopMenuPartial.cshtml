@@ -1,0 +1,85 @@
+﻿@model IEnumerable<BiomedicClinic.Core.ViewModels.MenuItemsViewModel>
+<div class="main-menu">
+    <div class="container">
+        <nav class="navbar navbar-expand-xl">
+            <button class="navbar-toggler mr-auto" id="secondaryNavOpen">
+                <i class="fas fa-bars"></i> EXPLORE
+            </button>
+            <button class="navbar-toggler ml-auto" id="primaryNavOpen">
+                MENU <i class="fas fa-bars"></i>
+            </button>
+            <div class="navbar-collapse" id="primaryNav">
+                <button class="navbar-toggler ml-auto" id="primaryNavClose">
+                    CLOSE <i class="fas fa-times"></i>
+                </button>
+                <ul class="navbar-nav ml-auto">
+                    @foreach (var page in Model)
+                    {
+                        string pageNewTab = "";
+                        string pageUrl = "";
+                        string subpageUrl = "";
+                        if (page.OpenPageInNewTab)
+                        {
+                            pageNewTab = "target='_blank'";
+                        }
+                        else
+                        {
+                            pageNewTab = "";
+                        }
+                        if (string.IsNullOrEmpty(page.PageExternalUrl))
+                        {
+                            pageUrl = "/editor/CMSEditor/ReturnCMSPageEdit" + page.PageUrl;
+                        }
+                        else
+                        {
+                            pageUrl = page.PageExternalUrl;
+                        }
+                        if (page.ParentId == 0 && !page.isHidden)
+                        {
+                            string dropdownClass = "";
+                            if (page.hasChildren)
+                            {
+                                dropdownClass = "dropdown";
+                            }
+                            <li class="nav-item @dropdownClass">
+                                <a class="nav-link" @pageNewTab href="@pageUrl">@page.MenuName</a>
+                                @if (page.hasChildren)
+                                {
+                                    <span class="dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                                          data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></span>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                        @foreach (var subpage in Model)
+                                        {
+                                            string subpageNewTab = "";
+                                            if (subpage.ParentId == page.Id && !subpage.isHidden)
+                                            {
+                                                if (subpage.OpenPageInNewTab)
+                                                {
+                                                    subpageNewTab = "target='_blank'";
+                                                }
+                                                else
+                                                {
+                                                    subpageNewTab = "";
+                                                }
+                                                if (string.IsNullOrEmpty(subpage.PageExternalUrl))
+                                                {
+                                                    subpageUrl = "/editor/CMSEditor/ReturnCMSPageEdit" + subpage.PageUrl;
+                                                }
+                                                else
+                                                {
+                                                    subpageUrl = subpage.PageExternalUrl;
+                                                }
+                                                <a class="dropdown-item" @subpageNewTab href="@subpageUrl">@subpage.MenuName</a>
+                                            }
+                                        }
+                                    </div>
+                                }
+
+                            </li>
+                        }
+                    }
+                </ul>
+            </div>
+        </nav>
+    </div>
+</div>

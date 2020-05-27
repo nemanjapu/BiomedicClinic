@@ -1,0 +1,42 @@
+﻿using BiomedicClinic.Core;
+using BiomedicClinic.Core.Models;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Net;
+using System.Net.Http;
+using System.Web.Http;
+using System.Web.Http.Description;
+
+namespace BiomedicClinic.Areas.Admin.Controllers.API
+{
+    [Authorize]
+    public class WebsitePagesApiController : ApiController
+    {
+        private readonly IUnitOfWork _unitOfWork;
+
+        public WebsitePagesApiController(IUnitOfWork unitOfWork)
+        {
+            _unitOfWork = unitOfWork;
+        }
+
+        [ResponseType(typeof(WebsitePage))]
+        public IHttpActionResult AddNewWebsitePage(WebsitePage websitePage)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            _unitOfWork.WebsitePages.AddPage(websitePage);
+            _unitOfWork.Complete();
+
+            return CreatedAtRoute("DefaultApi", new { id = websitePage.Id }, websitePage);
+        }
+
+        public IQueryable<WebsitePage> GetWebsitePagesForParent(int id)
+        {
+            return _unitOfWork.WebsitePages.GetActivePagesByMenuId(id).AsQueryable();
+        }
+    }
+}

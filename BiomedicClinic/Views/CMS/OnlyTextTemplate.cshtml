@@ -1,0 +1,93 @@
+﻿@{
+    @model  BiomedicClinic.Core.ViewModels.PageContentViewModel
+    Layout = null;
+}
+
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <title>@Model.PageTitle</title>
+    <meta name="description" content="@Model.MetaDescription">
+
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="~/Content/fonts.css">
+    <link rel="stylesheet" href="~/Content/style.css">
+    <link rel="stylesheet" href="~/Content/styleinner.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xl-3 p-0">
+                @Html.Action("GetSideMenuItems", "CMS")
+            </div>
+            <div class="col-xl-9 p-0">
+                <div class="inner-header">
+                    <img src="~/@Model.ImageToShow" alt="@Model.PageTitle" />
+                    @Html.Action("GetTopMenuItems", "CMS")
+                </div>
+                <div class="row">
+                    <div class="col-xl-6 col-sm-8">
+                        <h1 class="page-header">@Html.Raw(Model.Content2)</h1>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xl-6 col-lg-8">
+                        <article class="page-content">
+                            @Html.Raw(Model.Content1)
+                        </article>
+                    </div>
+                    <div class="col-xl-6 col-lg-4">
+                        <aside class="related-pages">
+                            @foreach (var page in Model.RelatedPages)
+                            {
+                                string pageNewTab = "";
+                                string pageUrl = "";
+                                if (page.OpenPageInNewTab)
+                                {
+                                    pageNewTab = "target='_blank'";
+                                }
+                                else
+                                {
+                                    pageNewTab = "";
+                                }
+                                if (string.IsNullOrEmpty(page.PageExternalUrl))
+                                {
+                                    pageUrl = page.PageUrl;
+                                }
+                                else
+                                {
+                                    pageUrl = page.PageExternalUrl;
+                                }
+                                <a href="@pageUrl" @pageNewTab>@page.MenuName</a>
+                            }
+                        </aside>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @Html.Partial("_FooterPartial")
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="~/Content/js/global.js"></script>
+
+</body>
+
+</html>

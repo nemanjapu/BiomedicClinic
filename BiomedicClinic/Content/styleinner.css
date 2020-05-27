@@ -1,0 +1,129 @@
+﻿.secondary-nav-con {
+    background: #fff;
+    box-shadow: 6px 0px 24px 0px rgba(0, 83, 203, 0.56);
+    position: sticky;
+    height: 100%;
+}
+
+    .secondary-nav-con .social-block a {
+        background: #0153cc;
+        color: #fff;
+    }
+
+.inner-header {
+    position: relative;
+}
+
+    .inner-header img {
+        height: 400px;
+        width: 100%;
+        object-fit: cover;
+    }
+
+.main-menu {
+    position: absolute;
+    top: 50px;
+    padding-top: 0;
+    background-color: rgba(0, 83, 203, .7);
+}
+
+    .main-menu .navbar-nav .nav-link {
+        color: #fff;
+    }
+
+.page-header {
+    position: relative;
+    padding-left: 10%;
+    padding-right: 20px;
+    background: #0153cc url("images/page-header-bg.png");
+    color: #fff;
+    height: 150px;
+    line-height: 150px;
+    top: -75px;
+    font-size: 34px;
+    text-transform: lowercase;
+    border-top-right-radius: 21px;
+    border-bottom-right-radius: 21px;
+    background-size: 346px;
+    background-repeat: no-repeat;
+    background-position: center left;
+}
+
+.related-pages {
+    width: 400px;
+    max-width: 90%;
+    margin: auto;
+}
+
+    .related-pages a {
+        display: block;
+        background-image: -moz-linear-gradient( 120deg, rgb(70,191,226) 0%, rgb(0,83,203) 100%);
+        background-image: -webkit-linear-gradient( 120deg, rgb(70,191,226) 0%, rgb(0,83,203) 100%);
+        background-image: -ms-linear-gradient( 120deg, rgb(70,191,226) 0%, rgb(0,83,203) 100%);
+        color: #fff;
+        text-align: center;
+        margin-bottom: 25px;
+        text-transform: lowercase;
+        font-size: 28px;
+        padding: 40px 70px;
+        line-height: 1.1;
+        border-radius: 21px;
+    }
+
+.main-menu .navbar-nav .nav-link:before,
+.main-menu .navbar-nav .nav-link:after {
+    background: #fff;
+}
+
+.page-content{
+    padding-left: 10%;
+    padding-bottom: 30px;
+}
+
+.page-header p{
+    margin: 0;
+}
+
+@media(max-width:1199px) {
+    #primaryNavOpen, #secondaryNavOpen {
+        color: #ffffff;
+    }
+    .secondary-nav-con {
+        position: fixed;
+        z-index: 1001;
+    }
+    .page-header {
+        font-size: 27px;
+    }
+    .main-menu {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        top: 20px;
+    }
+}
+
+@media(max-width:991px){
+    .page-content{
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .page-header {
+        padding-left: 15px;
+    }
+}
+
+@media(max-width:575px){
+    .page-header {
+        height: auto;
+        line-height: 1.3;
+        padding: 45px 15px;
+        top: 0;
+        font-size: 27px;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+        margin-bottom: 35px;
+    }
+    .inner-header img {
+        height: 200px;
+    }
+}

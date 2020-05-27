@@ -1,0 +1,340 @@
+﻿@{ 
+    Layout = null;
+}
+
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <title>Biomedic Clinic</title>
+    <meta name="description" content=" ">
+    <meta name="keywords" content=" " />
+
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ=" crossorigin="anonymous" />
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
+    <link rel="stylesheet" href="~/Content/fonts.css">
+    <link rel="stylesheet" href="~/Content/style.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+
+<body>
+    @Html.Action("GetTopMenuItems", "CMSEditor")
+    <header class="banner">
+        <img src="~/Content/images/banner.jpg" alt="banner image">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-4">
+                    @Html.Action("GetSideMenuItems", "CMSEditor")
+                </div>
+                <div class="col-xl-8 banner-text-con">
+                    <div class="banner-text">
+                        <a href="/editor/CMSEditor/ReturnCMSPageEdit/" class="banner-logo">
+                            <img src="~/Content/images/logo.png" alt="Biomedic Clinic">
+                        </a>
+                        <h1>
+                            The Biomedic is a medical centre for
+                            Bioregulatory Medicine.
+                        </h1>
+                        <p>
+                            The Biomedic clinic is a medical centre for <b>Bioregulatory Medicine</b>. The clinic and the  educational foundation was founded in 1994 in London, to provide systems-oriented  personalised healthcare.<br /><br />
+
+                            <b>Biomedic Clinic</b> delivers a <b>Bioregulatory Health System</b> that helps to improve health by means
+                            of facilitating bioregulation.<br /><br />
+
+                            Biomedic system comprises the Biomedic Clinic and 'The Societies for Bioregulatory medicine' founded in 1994 where similarly minded physicians are networking, and run register of bioregulatory doctors.<br /><br />
+
+                            <b>International Society for Bioregulatory Medicine</b>, is at the helm of fast-growing network that organises education in
+                            Bioregulatory Medicine in the UK and abroad.
+                        </p>
+                        <a href="" class="btn banner-btn first">Learn More</a>
+                        <a href="" class="btn banner-btn">Get in Touch</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="bioreg-tr">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-4 title-box" data-aos="zoom-in">
+                    <h2 class="title">Bioregulatory <span>Treatments</span></h2>
+                    <a href="" class="btn button">Book Now</a>
+                </div>
+                <div class="col-xl-8">
+                    <div class="row">
+                        <div class="col-sm-4" data-aos="fade-left">
+                            <a href="">
+                                <div class="bioreg-card first">
+                                    <div class="top-part">
+                                        <h3>Regenerative</h3>
+                                        <svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" height="512"
+                                             viewBox="0 0 512 512" width="512" data-name="Layer 1">
+                                            <path fill="#028ad4"
+                                                  d="m23 399.744a5.98 5.98 0 0 0 4.185-1.7 109.431 109.431 0 0 1 10.836-9.231l110.279 87.18a104.794 104.794 0 0 1 -12.217 15.918 6 6 0 0 0 8.782 8.178c21.586-23.18 32.355-53.037 30.324-84.071l-3.641-55.647 60.073-3.785c33.232-2.093 62.235-17.464 88.667-46.991l2.638-3.257a90.7 90.7 0 0 0 11.938-16.783 6.045 6.045 0 0 0 .365-.65 133.093 133.093 0 0 0 9.943-23.228 142.523 142.523 0 0 0 6.376-53.327l-2.862-43.736 58.353-3.676a119.459 119.459 0 0 0 23.218-3.783 6.153 6.153 0 0 0 .727-.2 116.12 116.12 0 0 0 62.836-42.793 6 6 0 0 0 -9.638-7.149 103.338 103.338 0 0 1 -15.469 16.655l-107.184-84.732a104.768 104.768 0 0 1 19.354-22.419 6 6 0 0 0 -7.9-9.034 116.331 116.331 0 0 0 -23.883 28.778c-.087.1-.175.191-.257.294a5.988 5.988 0 0 0 -1.013 1.928 110.345 110.345 0 0 0 -13.356 42.273c0 .026 0 .052-.007.078a110.793 110.793 0 0 0 -.351 18.585l3.624 55.377-48.008 3.023a171.992 171.992 0 0 0 -22.086 2.84 6.14 6.14 0 0 0 -.828.159 154.483 154.483 0 0 0 -24.693 7.06 136.541 136.541 0 0 0 -32.245 17.252c-.086.058-.169.123-.253.186q-3.856 2.844-7.377 5.925l-5.4 4.693a106.135 106.135 0 0 0 -23.9 30.728c-.029.054-.061.108-.088.163a134.255 134.255 0 0 0 -6.137 13.326 136.421 136.421 0 0 0 -9.286 44.206v.032a143.3 143.3 0 0 0 .169 15.573l3.05 46.606-61.906 3.9a129.612 129.612 0 0 0 -19.681 2.764c-.164.031-.326.069-.488.113a125.9 125.9 0 0 0 -43.6 18.89c-.117.074-.232.153-.345.236a121.776 121.776 0 0 0 -15.814 12.973 6 6 0 0 0 4.176 10.3zm332.613-346.187 103.252 81.625a104.961 104.961 0 0 1 -28.544 13.483l-83.509-66.017a98.358 98.358 0 0 1 8.801-29.091zm59.6 98.466q-4.421.649-8.933.939l-56.669 3.569-3.526-53.9c-.119-1.812-.182-3.619-.2-5.422zm-124.729 21.777 46.323-2.918 2.765 42.255q.21 3.206.274 6.384l-56.977-45.043c2.518-.278 5.051-.521 7.615-.678zm-44.088 9.3a141.51 141.51 0 0 1 20.404-6.03l72.529 57.337a126.752 126.752 0 0 1 -11.507 42.651l-104.454-82.577a129.973 129.973 0 0 1 23.032-11.39zm-41.7 25.916 5.443-4.728c.988-.867 2.017-1.708 3.052-2.545l108.795 86.008a74.567 74.567 0 0 1 -8.032 10.623l-2.711 3.34a165.631 165.631 0 0 1 -16.584 16.181l-108.7-85.932a91.4 91.4 0 0 1 18.741-22.956zm-26.829 39.568q1.17-2.949 2.46-5.776l104.514 82.612a105.462 105.462 0 0 1 -42.825 17.893l-72.44-57.268a123.815 123.815 0 0 1 8.293-37.47zm46.921 96.418-52.267 3.292-2.951-45.106c-.042-.639-.067-1.279-.1-1.918zm-125.288 21.442 60.176-3.79 3.543 54.147c.1 1.5.156 3 .187 4.487l-68.849-54.425c1.643-.172 3.285-.315 4.943-.419zm-20.773 3.2 83.9 66.33a98.537 98.537 0 0 1 -8.509 29.321l-105.554-83.445a114.246 114.246 0 0 1 30.158-12.207z" />
+                                        </svg>
+                                    </div>
+                                    <div class="bottom-part">
+                                        <img src="~/Content/images/bioreg1.jpg" alt="Regenerative">
+                                        <div class="see-more"><span>See More</span></div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-sm-4" data-aos="fade-left" data-aos-delay="400">
+                            <a href="">
+                                <div class="bioreg-card second">
+                                    <div class="top-part">
+                                        <h3>Preventative</h3>
+                                        <svg fill="#32b9df" xmlns="http://www.w3.org/2000/svg"
+                                             xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px"
+                                             y="0px" viewBox="0 0 458.581 458.581" xml:space="preserve">
+                                        <g>
+                                        <path d="M447.477,54.766h-43.486c-6.136,0-11.105,4.969-11.105,11.105V392.71c0,6.136,4.969,11.105,11.105,11.105h43.486   c6.135,0,11.104-4.969,11.104-11.105V65.871C458.581,59.735,453.612,54.766,447.477,54.766z" />
+
+                                        <path d="M362.302,65.467l-42.156-10.693c-2.854-0.723-5.878-0.28-8.406,1.22c-2.535,1.51-4.362,3.959-5.085,6.821l-80.338,316.807   c-1.508,5.942,2.093,11.984,8.033,13.492l42.156,10.693c2.854,0.723,5.88,0.28,8.406-1.222c2.535-1.508,4.364-3.958,5.087-6.819   l80.337-316.808C371.843,73.017,368.244,66.975,362.302,65.467z" />
+
+                                        <path d="M269.174,139.326l-32.366-29.046c-2.193-1.967-5.077-2.986-8.017-2.822c-2.938,0.156-5.7,1.478-7.667,3.671L2.841,354.389   c-4.098,4.564-3.717,11.586,0.847,15.684l32.358,29.046c2.193,1.967,5.077,2.986,8.017,2.822c2.94-0.155,5.7-1.478,7.667-3.671   l218.29-243.259C274.119,150.446,273.738,143.424,269.174,139.326z" />
+
+                                            </g>
+                                        </svg>
+                                    </div>
+                                    <div class="bottom-part">
+                                        <img src="~/Content/images/bioreg2.jpg" alt="Preventative">
+                                        <div class="see-more"><span>See More</span></div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-sm-4" data-aos="fade-left" data-aos-delay="800">
+                            <a href="">
+                                <div class="bioreg-card third">
+                                    <div class="top-part">
+                                        <h3>Aesthetic</h3>
+                                        <svg fill="#028ad4" xmlns="http://www.w3.org/2000/svg"
+                                             xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px"
+                                             y="0px" viewBox="0 0 469.824 469.824" xml:space="preserve">
+                                        <g>
+                                        <path d="M188.885,67.36C147.84,26.336,67.52,21.579,10.667,21.579C4.779,21.579,0,26.357,0,32.245    c0,56.853,4.736,137.173,45.781,178.219c17.323,17.323,43.883,25.067,70.208,25.067c28.608,0,56.96-9.152,72.896-25.088    C219.456,179.872,225.067,103.52,188.885,67.36z M173.803,195.381c-22.827,22.805-86.208,26.709-112.917,0    C27.755,162.251,22.016,94.944,21.397,42.976c51.968,0.619,119.275,6.357,152.405,39.488    C200.512,109.173,196.608,172.576,173.803,195.381z" />
+
+                                            </g>
+                                        <g xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M459.157,63.776c-56.853,0-137.173,4.736-178.219,45.781c-36.181,36.16-30.571,112.512,0,143.083    c15.936,15.915,44.267,25.067,72.875,25.067c26.325,0,52.864-7.723,70.229-25.045c41.024-41.045,45.781-121.365,45.781-178.219    C469.824,68.555,465.045,63.776,459.157,63.776z M408.917,237.557c-26.709,26.709-90.112,22.805-112.917,0    c-22.805-22.805-26.709-86.208,0-112.917c33.131-33.131,100.437-38.869,152.405-39.488    C447.787,137.141,442.048,204.448,408.917,237.557z" />
+
+                                            </g>
+                                        <g xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M382.123,156.107c-2.517-5.355-9.728-7.189-15.04-4.715c-81.813,38.464-122.005,105.536-140.267,174.485    c-22.592-146.603-87.936-191.296-115.648-210.261c-3.456-2.368-6.144-4.096-7.637-5.568c-4.16-4.16-10.923-4.16-15.083,0    c-4.16,4.16-4.16,10.923,0,15.083c2.112,2.091,5.76,4.715,10.688,8.085c31.232,21.355,114.197,78.123,114.197,304.363    c0,5.888,4.779,10.667,10.667,10.667s10.667-4.779,10.667-10.645c0-91.413,24.555-211.925,141.504-266.88    c0-0.021,1.728-0.832,1.728-0.832C383.211,167.371,384.64,161.44,382.123,156.107z" />
+
+                                            </g>
+                                        </svg>
+                                    </div>
+                                    <div class="bottom-part">
+                                        <img src="~/Content/images/bioreg3.jpg" alt="Aesthetic">
+                                        <div class="see-more"><span>See More</span></div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-5">
+                    <div class="left-about-box" data-aos="zoom-in">
+                        <h2 class="title text-white">Get to<span>know me</span></h2>
+                        <p class="mb-5">Dr Shakambet graduated as a medical doctor in 1984 in Sarajevo, Yugoslavia and he is a practicing at the Biomedic Centre in London that he founded in 1995. He pioneered Bioregulatory Medicine as an integrated form of a unique integrative model of Bioregulatory Medicine based on systems biology.</p>
+                        <a href="" class="btn button">Read More</a>
+                    </div>
+                </div>
+                <div class="col-xl-7">
+                    <div class="about-box" data-aos="flip-left">
+                        <img class="logo-about" src="~/Content/images/logo-white.png" alt="Biomedic Clinic">
+                        <h3>Dr. Damir A Shakambet</h3>
+                        <h5>MD, Fellow BSBM</h5>
+                        <h4>Father of <span>bioregulatory medicine</span></h4>
+                        <img class="about-img" src="~/Content/images/dr-damir.png" alt="Dr. Damir A Shakambet, Father of bioregulatory medicine">
+                        <a href="" target="_blank" class="ln-icon">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="partners">
+        <div class="container">
+            <div class="partners-carousel owl-carousel">
+                <div>
+                    <img src="~/Content/images/partners/mirror.png" alt="Mirror" />
+                </div>
+                <div>
+                    <img src="~/Content/images/partners/irishtimes.png" alt="the irish times" />
+                </div>
+                <div>
+                    <img src="~/Content/images/partners/times.png" alt="times" />
+                </div>
+                <div>
+                    <img src="~/Content/images/partners/guardian.png" alt="the guardian" />
+                </div>
+                <div>
+                    <img src="~/Content/images/partners/prima.png" alt="prima" />
+                </div>
+                <div>
+                    <img src="~/Content/images/partners/elle.png" alt="elle" />
+                </div>
+                <div>
+                    <img src="~/Content/images/partners/townsend.png" alt="townsend letter" />
+                </div>
+                <div>
+                    <img src="~/Content/images/partners/cam.png" alt="cam" />
+                </div>
+                <div>
+                    <img src="~/Content/images/partners/homeopathy.png" alt="homeopathy" />
+                </div>
+                <div>
+                    <img src="~/Content/images/partners/r&e.png" alt="r & e" />
+                </div>
+                <div>
+                    <img src="~/Content/images/partners/icnm.png" alt="icnm" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials-hp">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-7 ml-auto" data-aos="fade-left">
+                    <h2 class="title">Testimonials</h2>
+                    <div class="owl-carousel testimonials-carousel">
+                        <div class="testimonial-hp">
+                            <p>"...My eczema steadily improved until it disappeared. What they did was to take away the layers of problems that over the years had built up; like peeling an onion, until they got to the core where they could make a difference..."</p>
+                            <h4>The Times</h4>
+                            <h5>November 1999</h5>
+                        </div>
+                        <div class="testimonial-hp">
+                            <p>"...My eczema steadily improved until it disappeared. What they did was to take away the layers of problems that over the years had built up; like peeling an onion, until they got to the core where they could make a difference..."</p>
+                            <h4>The Times</h4>
+                            <h5>November 1999</h5>
+                        </div>
+                        <div class="testimonial-hp">
+                            <p>"...My eczema steadily improved until it disappeared. What they did was to take away the layers of problems that over the years had built up; like peeling an onion, until they got to the core where they could make a difference..."</p>
+                            <h4>The Times</h4>
+                            <h5>November 1999</h5>
+                        </div>
+                    </div>
+                    <a href="" class="btn button">See All</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-5">
+                    <div class="contact-box" data-aos="flip-right">
+                        <h2 class="title text-center">Contact us</h2>
+                        <div class="form-con container-fluid">
+                            <form action="">
+                                <div class="row">
+                                    <div class="col-sm-6 px-2">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" placeholder="First Name">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 px-2">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" placeholder="Last Name">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 px-2">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" placeholder="E-mail">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 px-2">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" placeholder="Phone number">
+                                        </div>
+                                    </div>
+                                    <div class="col-12 px-2 mb-4">
+                                        <div class="form-group">
+                                            <textarea class="form-control" placeholder="Message"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 text-center"><button type="submit" class="btn button">Send Email</button></div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="working-hours">
+                            <div>
+                                <img src="~/Content/images/calendar.png" alt="working hours">
+                            </div>
+                            <div>
+                                <p>Mon to Fri</p>
+                                <span>9 am to 9 pm</span>
+                            </div>
+                            <div>
+                                <p>Sat</p>
+                                <span>10am to 3pm</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-map">
+                    <div id="map"></div>
+                </div>
+                <div class="col-xl-7">
+                    <address>
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <a href="tel:4402079356866"><i class="fas fa-mobile-alt"></i> +44 (0)20 7935 6866</a>
+                            </div>
+                            <div class="col-sm-4">
+                                <a href="tel:4402079356866"><i class="fas fa-phone-alt"></i> +44 (0)20 7935 6866</a>
+                            </div>
+                            <div class="col-sm-4">
+                                <a href="https://goo.gl/maps/NzwwPRQX7taFqRHY8" target="_blank"><i class="fas fa-map-marker-alt"></i> <span>23 Manchester St, Marylebone, London</span></a>
+                            </div>
+                        </div>
+                    </address>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    @Html.Partial("_FooterPartial")
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCZ9ITEowmHPfUzKt0uM8eMCJi4sqKVozs&libraries=places"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typeit/7.0.3/typeit.min.js" integrity="sha256-xIv5NKvNcqQboib6c/iBCjO8v7kcC0k2LH8ikZFQexE=" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="~/Content/js/global.js"></script>
+    <script src="~/Content/js/home.js"></script>
+
+</body>
+
+</html>
