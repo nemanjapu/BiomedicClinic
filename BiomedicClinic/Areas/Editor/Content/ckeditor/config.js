@@ -8,6 +8,9 @@ CKEDITOR.editorConfig = function( config ) {
 	// config.language = 'fr';
 	// config.uiColor = '#AADC6E';
     config.extraPlugins = 'sourcedialog';
+    config.allowedContent = true;
+    config.removeFormatAttributes = '';
+    config.filebrowserBrowseUrl = '/imageseditor/imagesmanager/selectimage';
 };
 
 CKEDITOR.on("instanceReady", function (event) {

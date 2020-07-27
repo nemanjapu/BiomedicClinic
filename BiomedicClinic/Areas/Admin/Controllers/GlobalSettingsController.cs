@@ -8,6 +8,7 @@ using System.Web.Mvc;
 
 namespace BiomedicClinic.Areas.Admin.Controllers
 {
+    [Authorize]
     public class GlobalSettingsController : Controller
     {
         private readonly IUnitOfWork _unitOfWork;

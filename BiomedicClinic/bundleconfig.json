@@ -1,0 +1,78 @@
+[
+  {
+    "outputFileName": "Content/homecss.css",
+    "inputFiles": [
+      "Content/bootstrap.css",
+      "Content/fonts.css",
+      "Content/owl.carousel.min.css",
+      "Content/owl.theme.default.min.css",
+      "Content/aos.css",
+      "Content/style.css",
+      "Content/cookies_eu.css",
+      "Content/fontawesome-all.css"
+    ]
+  },
+  {
+    "outputFileName": "Content/blankcss.css",
+    "inputFiles": [
+      "Content/bootstrap.css",
+      "Content/fonts.css",
+      "Content/aos.css",
+      "Content/style.css",
+      "Content/styleinner.css",
+      "Content/cookies_eu.css",
+      "Content/fontawesome-all.css"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/homejs.js",
+    "inputFiles": [
+      "Scripts/jquery-3.3.1.js",
+      "Scripts/jquery.validate.js",
+      "Scripts/jquery.validate-vsdoc.js",
+      "Scripts/jquery.validate.unobtrusive.js",
+      "Scripts/jquery.unobtrusive-ajax.js",
+      "Scripts/umd/popper.js",
+      "Scripts/bootstrap.js",
+      "Scripts/owl.carousel.min.js",
+      "Scripts/aos.js",
+      "Scripts/jquery.cookie.js",
+      "Scripts/cookies_eu.js",
+      "Content/js/global.js",
+      "Content/js/home.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/blankpagejs.js",
+    "inputFiles": [
+      "Scripts/jquery-3.3.1.js",
+      "Scripts/jquery.validate.js",
+      "Scripts/jquery.validate.unobtrusive.js",
+      "Scripts/jquery.validate-vsdoc.js",
+      "Scripts/jquery.unobtrusive-ajax.js",
+      "Scripts/umd/popper.js",
+      "Scripts/bootstrap.js",
+      "Scripts/aos.js",
+      "Scripts/jquery.cookie.js",
+      "Scripts/cookies_eu.js",
+      "Content/js/global.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/contactpagejs.js",
+    "inputFiles": [
+      "Scripts/jquery-3.3.1.js",
+      "Scripts/jquery.validate.js",
+      "Scripts/jquery.validate.unobtrusive.js",
+      "Scripts/jquery.validate-vsdoc.js",
+      "Scripts/jquery.unobtrusive-ajax.js",
+      "Scripts/umd/popper.js",
+      "Scripts/bootstrap.js",
+      "Scripts/aos.js",
+      "Scripts/jquery.cookie.js",
+      "Scripts/cookies_eu.js",
+      "Content/js/global.js",
+      "Content/js/contact.js"
+    ]
+  }
+]

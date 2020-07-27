@@ -1,0 +1,26 @@
+﻿@model BiomedicClinic.Core.Models.GlobalValues
+
+@if (!string.IsNullOrEmpty(Model.FacebookLink))
+{
+    <a href="@Model.FacebookLink" target="_blank"><i class="fab fa-facebook-f"></i></a>
+}
+@if (!string.IsNullOrEmpty(Model.TwitterLink))
+{
+    <a href="@Model.TwitterLink" target="_blank"><i class="fab fa-twitter"></i></a>
+}
+@if (!string.IsNullOrEmpty(Model.InstagramLink))
+{
+    <a href="@Model.InstagramLink" target="_blank"><i class="fab fa-instagram"></i></a>
+}
+@if (!string.IsNullOrEmpty(Model.LinkedinLink))
+{
+    <a href="@Model.LinkedinLink" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+}
+@if (!string.IsNullOrEmpty(Model.YoutubeLink))
+{
+    <a href="@Model.YoutubeLink" target="_blank"><i class="fab fa-youtube"></i></a>
+}
+@if (!string.IsNullOrEmpty(Model.PinterestLink))
+{
+    <a href="@Model.PinterestLink" target="_blank"><i class="fab fa-pinterest-p"></i></a>
+}

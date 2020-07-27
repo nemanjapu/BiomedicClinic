@@ -15,31 +15,43 @@
                         <a href="/recent-features/">recent features</a>
                         <a href="/testimonials/">testimonials</a>
                         <a href="/patient-forms/">patient forms</a>
-                        <a class="btn button footer-btn" href="">Download Form</a>
+                        <a class="btn button footer-btn" href="/pdfdownload/download">Download Form</a>
                         <a class="btn button footer-btn" href="https://www.bioregmed.com/march%202010.html">Online Form</a>
                     </div>
                 </div>
             </div>
             <div class="col-xl-4 soc-con">
                 <div class="social-block py-4">
-                    <a href="" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                    <a href="" target="_blank"><i class="fab fa-twitter"></i></a>
-                    <a href="" target="_blank"><i class="fab fa-instagram"></i></a>
-                    <a href="" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="" target="_blank"><i class="fab fa-youtube"></i></a>
+                    @Html.Action("GetSocialMedia", "CMS")
                 </div>
             </div>
             <div class="col-xl-4 logo-con">
-                <a href="" class="footer-logo">
-                    <img src="~/Content/images/logo-white.png" alt="Biomedic Clinic">
-                </a>
+                <h4 class="text-white">sign up for our newsletter</h4>
+                <form action="/leads/contact/subscribe" data-ajax="true" data-ajax-method="POST" data-ajax-mode="replace" data-ajax-update="#MessageCont2" id="contactForm2" method="post">
+                    <input type="hidden" name="Note2" id="Note2" value="Email Subscription">
+                    <div class="row" id="MessageCont2">
+                        <div class="col-sm-8 pr-sm-0">
+                            <div class="form-group">
+                                <input type="text" class="form-control required" name="EmailAddress2" id="EmailAddress2" placeholder="E-mail">
+                            </div>
+                        </div>
+                        <div class="col-sm-4 text-center pl-sm-0">
+                            <button type="submit" class="btn button">subscribe</button>
+                        </div>
+                    </div>
+                </form>
+                @*<a href="/" class="footer-logo">
+                        <img src="~/Content/images/logo-white.png" alt="Biomedic Clinic">
+                    </a>*@
             </div>
         </div>
     </div>
 </footer>
 <footer class="footer-second">
     <div class="container">
-        <p><a href="/terms-of-use/">Terms of Use</a> | <a href="/privacy-policy/">Privacy Policy</a></p>
+        <p>Biomedic &copy; 1994-@DateTime.Now.Year All rights protected by Biomedic Centre&reg; | <a href="/terms-of-use/">Terms of Use</a> | <a href="/privacy-policy/">Privacy Policy</a></p>
         <p class="mb-0">Powered by <a href="https://www.struix.co" target="_blank">Struix</a></p>
     </div>
 </footer>
+
+@Html.Raw(EUCookies.Consent.Instance.Install())

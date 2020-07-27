@@ -48,6 +48,7 @@ namespace BiomedicClinic
                         "~/Areas/Admin/Content/css/default.css",
                         "~/Areas/Admin/Content/css/custom.css"
                         ));
+
         }
     }
 }

@@ -1,9 +1,11 @@
 ﻿using BiomedicClinic.Core.Models;
+using BiomedicClinic.Helpers;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
+using System.Web.Mvc;
 
 namespace BiomedicClinic.Areas.Admin.ViewModels
 {
@@ -28,5 +30,11 @@ namespace BiomedicClinic.Areas.Admin.ViewModels
         public bool isHidden { get; set; }
         public HttpPostedFileBase File { get; set; }
         public string ImageToShow { get; set; }
+        public List<SelectListItem> PageTemplateDropdown { get; set; }
+
+        public EditWebsitePageAdminViewModel()
+        {
+            PageTemplateDropdown = DropdownHelper.GetPageTemplateList();
+        }
     }
 }

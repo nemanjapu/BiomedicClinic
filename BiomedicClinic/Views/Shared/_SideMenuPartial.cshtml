@@ -37,9 +37,9 @@
                             }
 
                             @*<a href="@pageUrl" @pageNewTab>*@
-                                <span class="nav-link">
-                                    @page.MenuName
-                                </span>
+                            <span class="nav-link">
+                                @page.MenuName
+                            </span>
                             @*</a>*@
 
                             @foreach (var subpage in Model)
@@ -63,7 +63,7 @@
                                     {
                                         subpageUrl = subpage.PageExternalUrl;
                                     }
-                                    <a class="nav-link" @subpageNewTab href="@subpageUrl">@subpage.MenuName</a>
+                                    <div><a class="nav-link" @subpageNewTab href="@subpageUrl">@subpage.MenuName</a></div>
                                 }
                             }
                         </li>
@@ -72,12 +72,10 @@
             </ul>
         </div>
     </nav>
-    <img src="~/Content/images/logo2.png" alt="VIS MEDICATRIX NATURAE - Internation Society for Bioregulatory Medicine" class="secondary-logo">
+    <a href="https://www.bioregmed.com/">
+        <img src="~/Content/images/logo2.png" alt="VIS MEDICATRIX NATURAE - Internation Society for Bioregulatory Medicine" class="secondary-logo">
+    </a>
     <div class="social-block pt-4">
-        <a href="" target="_blank"><i class="fab fa-facebook-f"></i></a>
-        <a href="" target="_blank"><i class="fab fa-twitter"></i></a>
-        <a href="" target="_blank"><i class="fab fa-instagram"></i></a>
-        <a href="" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-        <a href="" target="_blank"><i class="fab fa-youtube"></i></a>
+        @Html.Action("GetSocialMedia", "CMS")
     </div>
 </div>

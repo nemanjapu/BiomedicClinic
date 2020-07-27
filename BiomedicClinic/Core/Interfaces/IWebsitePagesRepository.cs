@@ -11,6 +11,7 @@ namespace BiomedicClinic.Core.Interfaces
     {
         IEnumerable<WebsitePage> GetAllPages();
         IEnumerable<WebsitePage> GetActivePages();
+        IEnumerable<WebsitePage> GetPagesForSitemap();
         IEnumerable<WebsitePage> GetActivePagesByMenuId(int menuId);
         IEnumerable<WebsitePage> GetHiddenPages();
         IEnumerable<WebsitePage> GetRelatedPages(int id, int parentId);

@@ -42,6 +42,11 @@ namespace BiomedicClinic.Core.Repositories
             return _ctx.WebsitePages.Where(wp => wp.isHidden).AsEnumerable();
         }
 
+        public IEnumerable<WebsitePage> GetPagesForSitemap()
+        {
+            return _ctx.WebsitePages.Where(wp => !wp.isHidden && string.IsNullOrEmpty(wp.PageExternalUrl)).AsEnumerable();
+        }
+
         public IEnumerable<WebsitePage> GetActivePagesByMenuId(int menuId)
         {
             return _ctx.WebsitePages.Where(wp => wp.MenuId == menuId).AsEnumerable();
@@ -54,7 +59,7 @@ namespace BiomedicClinic.Core.Repositories
 
         public IEnumerable<WebsitePage> GetHiddenPages()
         {
-            return _ctx.WebsitePages.Where(wp => !wp.isHidden).AsEnumerable();
+            return _ctx.WebsitePages.Where(wp => wp.isHidden).AsEnumerable();
         }
 
         public WebsitePage GetPageById(int id)

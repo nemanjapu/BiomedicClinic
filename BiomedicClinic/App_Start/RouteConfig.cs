@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BiomedicClinic.Helpers;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -23,6 +24,18 @@ namespace BiomedicClinic
             );
 
             routes.MapRoute(
+                "Leads",
+                "leads/{controller}/{action}",
+                new { controller = "Contact", action = "Index" }
+            );
+
+            routes.MapRoute(
+                "ImagesEditor",
+                "imageseditor/{controller}/{action}",
+                new { controller = "ImagesManager", action = "SelectImage" }
+            );
+
+            routes.MapRoute(
                 name: "Editor",
                 url: "editor/{*url}",
                 defaults: new
@@ -41,7 +54,14 @@ namespace BiomedicClinic
                     controller = "CMS",
                     action = "ReturnCMSPage",
                     url = UrlParameter.Optional
-                }
+                },
+                constraints: new { url = new CmsUrlConstraint() }
+            );
+
+            routes.MapRoute(
+               "Sitemap",
+               "sitemap.xml",
+               new { controller = "CMS", action = "SitemapXml" }
             );
 
             routes.MapRoute(

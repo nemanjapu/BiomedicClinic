@@ -1,4 +1,4 @@
-﻿
+﻿@model IEnumerable<BiomedicClinic.Core.Models.Lead>
 @{
     ViewBag.Title = "Dashboard";
 }
@@ -9,6 +9,29 @@
     </header>
 
     <!-- start: page -->
+    <table class="table table-responsive-md mb-0">
+        <thead>
+            <tr>
+                <th>Date Submited</th>
+                <th>Name</th>
+                <th>Email Address</th>
+                <th>Phone</th>
+                <th>Note</th>
+            </tr>
+        </thead>
+        <tbody>
 
+            @foreach (var lead in Model)
+            {
+            <tr>
+                <td>@lead.Date</td>
+                <td>@lead.FirstName @lead.LastName</td>
+                <td>@lead.EmailAddress</td>
+                <td>@lead.PhoneNumber</td>
+                <td>@lead.Note</td>
+            </tr>
+            }
+        </tbody>
+    </table>
     <!-- end: page -->
 </section>

@@ -34,6 +34,20 @@ namespace BiomedicClinic.Areas.Admin.Controllers.API
             return CreatedAtRoute("DefaultApi", new { id = websitePage.Id }, websitePage);
         }
 
+        //[HttpPost]
+        //public IHttpActionResult DeleteWebsitePage(int id)
+        //{
+        //    if (!ModelState.IsValid)
+        //    {
+        //        return BadRequest();
+        //    }
+
+        //    _unitOfWork.WebsitePages.RemovePage(id);
+        //    _unitOfWork.Complete();
+
+        //    return Ok();
+        //}
+
         public IQueryable<WebsitePage> GetWebsitePagesForParent(int id)
         {
             return _unitOfWork.WebsitePages.GetActivePagesByMenuId(id).AsQueryable();

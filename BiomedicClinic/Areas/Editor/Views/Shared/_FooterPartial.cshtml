@@ -30,6 +30,22 @@
                 </div>
             </div>
             <div class="col-xl-4 logo-con">
+                <div action="/leads/contact/sendmessage" data-ajax="true" data-ajax-method="POST" data-ajax-mode="replace" data-ajax-update="#MessageCont2" id="contactForm" method="post">
+                    <input type="hidden" name="FirstName" id="FirstName">
+                    <input type="hidden" name="LastName" id="LastName">
+                    <input type="hidden" name="PhoneNumber" id="PhoneNumber">
+                    <input type="hidden" name="Note" id="Note">
+                    <div class="row" id="MessageCont2">
+                        <div class="col-sm-8 px-2 pr-sm-0">
+                            <div class="form-group">
+                                <input type="text" class="form-control required" name="EmailAddress" id="EmailAddress" placeholder="E-mail">
+                            </div>
+                        </div>
+                        <div class="col-sm-4 text-center px-2 pl-sm-0">
+                            <button type="submit" class="btn button">Send Email</button>
+                        </div>
+                    </div>
+                </div>
                 <a href="" class="footer-logo">
                     <img src="~/Content/images/logo-white.png" alt="Biomedic Clinic">
                 </a>

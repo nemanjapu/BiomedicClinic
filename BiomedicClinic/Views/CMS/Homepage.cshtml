@@ -1,4 +1,5 @@
-﻿@{ 
+﻿@{
+    @model  BiomedicClinic.Core.ViewModels.PageContentViewModel
     Layout = null;
 }
 
@@ -9,20 +10,40 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-    <title>Biomedic Clinic</title>
-    <meta name="description" content=" ">
-    <meta name="keywords" content=" " />
+    <title>@Model.PageTitle</title>
+    <meta name="description" content="@Model.MetaDescription">
+    <meta name="keywords" content="@Model.MetaKeywords" />
+    <meta property="og:image" content="https://www.biomedic.co.uk/Content/images/logo.png">
+    <meta property="og:image:type" content="image/png">
+    <meta name="google-site-verification" content="2V1Aguc6l9n7yDL8OQflueGrNJflMMdFeG7iER8kAXQ" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#0153cc">
+    <meta name="msapplication-TileColor" content="#2d89ef">
+    <meta name="theme-color" content="#ffffff">
+    <meta property="og:url" content="@BiomedicClinic.Helpers.HTMLHelpers.GetBaseUrl()" />
+    <meta property="og:title" content="@Model.PageTitle" />
+    <meta property="og:description" content="@Model.MetaDescription" />
+    <meta property="og:image:alt" content="@Model.PageTitle" />
+    <meta property="og:type" content="website" />
+    <link rel="stylesheet" href="~/Content/homecss.min.css">
+    <link href="https://www.biomedic.co.uk/" rel="canonical" />
 
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ=" crossorigin="anonymous" />
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
-    <link rel="stylesheet" href="~/Content/fonts.css">
-    <link rel="stylesheet" href="~/Content/style.css">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script type="text/javascript">
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-38529299-1']);
+        _gaq.push(['_trackPageview']);
+
+        (function () {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+
+    </script>
 </head>
 
 <body>
@@ -39,24 +60,25 @@
                         <a href="/" class="banner-logo">
                             <img src="~/Content/images/logo.png" alt="Biomedic Clinic">
                         </a>
-                        <h1>
-                            @*The Biomedic is a medical centre for
-                            Bioregulatory Medicine.*@
+                        <h1 data-aos="zoom-in">
+                            The Biomedic is a medical centre for
+                            Bioregulatory Medicine
                         </h1>
                         <p>
-                            The Biomedic clinic is a medical centre for <b>Bioregulatory Medicine</b>. The clinic and the  educational foundation was founded in 1994 in London, to provide systems-oriented  personalised healthcare.<br /><br />
+                            The <b>Biomedic Clinic</b> is a medical centre for <b>Bioregulatory Medicine</b>, which delivers a <b>Biomedic Health System</b> that improves health by means of facilitating bioregulation (homeostasis).
 
-                            <b>Biomedic Clinic</b> delivers a <b>Bioregulatory Health System</b> that helps to improve health by means
-                            of facilitating bioregulation.<br /><br />
+                            <br /><br />
 
-                            Biomedic system comprises the Biomedic Clinic and 'The Societies for Bioregulatory medicine' founded in 1994 where similarly minded physicians are networking, and run register of bioregulatory doctors.<br /><br />
+                            Each patient is assessed by diagnosing all systems involved in regulating health, and not only those that show signs of disease, but to assess a pattern of systems imbalance or its algorithm, which is then followed by the Bioregulatory protocol of a multi-system treatment.
+                            <br /><br />
 
-                            <b>International Society for Bioregulatory Medicine</b>, is at the helm of fast-growing network that organises education in
-                            Bioregulatory Medicine in the UK and abroad.
+                            The clinic and the educational foundation that runs bioregulatory societies was founded in 1994 in London by <b>Dr Damir A Shakambet</b> and <b>International Society for Bioregulatory Medicine</b> is at the helm of a fast-growing network that organises education in Bioregulatory Medicine in the UK and abroad, where similarly minded physicians are networking and run the register of bioregulatory doctors.
+
+                            <br /><br />
                         </p>
                         <div class="text-center">
-                            <a href="/about/" class="btn banner-btn first">Learn More</a>
-                            <a href="/contact/" class="btn banner-btn">Get in Touch</a>
+                            <a href="/bioregulatory-medicine/" class="btn banner-btn first">learn more</a>
+                            <a href="/contact/" class="btn banner-btn first">get in touch</a>
                         </div>
                     </div>
                 </div>
@@ -69,7 +91,7 @@
             <div class="row">
                 <div class="col-xl-4 title-box" data-aos="zoom-in">
                     <h2 class="title">Bioregulatory <span>Treatments</span></h2>
-                    <a href="/treatments/" class="btn button">Book Now</a>
+                    <a href="https://bioregmed.com/bookonlineappointment.html" class="btn button">book now</a>
                 </div>
                 <div class="col-xl-8">
                     <div class="row">
@@ -86,7 +108,7 @@
                                     </div>
                                     <div class="bottom-part">
                                         <img src="~/Content/images/bioreg1.jpg" alt="Regenerative">
-                                        <div class="see-more"><span>See More</span></div>
+                                        <div class="see-more"><span>see more</span></div>
                                     </div>
                                 </div>
                             </a>
@@ -102,16 +124,22 @@
                                         <g>
                                         <path d="M447.477,54.766h-43.486c-6.136,0-11.105,4.969-11.105,11.105V392.71c0,6.136,4.969,11.105,11.105,11.105h43.486   c6.135,0,11.104-4.969,11.104-11.105V65.871C458.581,59.735,453.612,54.766,447.477,54.766z" />
 
+
+
                                         <path d="M362.302,65.467l-42.156-10.693c-2.854-0.723-5.878-0.28-8.406,1.22c-2.535,1.51-4.362,3.959-5.085,6.821l-80.338,316.807   c-1.508,5.942,2.093,11.984,8.033,13.492l42.156,10.693c2.854,0.723,5.88,0.28,8.406-1.222c2.535-1.508,4.364-3.958,5.087-6.819   l80.337-316.808C371.843,73.017,368.244,66.975,362.302,65.467z" />
+
+
 
                                         <path d="M269.174,139.326l-32.366-29.046c-2.193-1.967-5.077-2.986-8.017-2.822c-2.938,0.156-5.7,1.478-7.667,3.671L2.841,354.389   c-4.098,4.564-3.717,11.586,0.847,15.684l32.358,29.046c2.193,1.967,5.077,2.986,8.017,2.822c2.94-0.155,5.7-1.478,7.667-3.671   l218.29-243.259C274.119,150.446,273.738,143.424,269.174,139.326z" />
 
-                                            </g>
+
+
+                                        </g>
                                         </svg>
                                     </div>
                                     <div class="bottom-part">
                                         <img src="~/Content/images/bioreg2.jpg" alt="Preventative">
-                                        <div class="see-more"><span>See More</span></div>
+                                        <div class="see-more"><span>see more</span></div>
                                     </div>
                                 </div>
                             </a>
@@ -140,7 +168,7 @@
                                     </div>
                                     <div class="bottom-part">
                                         <img src="~/Content/images/bioreg3.jpg" alt="Aesthetic">
-                                        <div class="see-more"><span>See More</span></div>
+                                        <div class="see-more"><span>see more</span></div>
                                     </div>
                                 </div>
                             </a>
@@ -157,8 +185,8 @@
                 <div class="col-xl-5">
                     <div class="left-about-box" data-aos="zoom-in">
                         <h2 class="title text-white">Get to<span>know me</span></h2>
-                        <p class="mb-5">Dr Shakambet graduated as a medical doctor in 1984 in Sarajevo, Yugoslavia and he is a practicing at the Biomedic Centre in London that he founded in 1995. He pioneered Bioregulatory Medicine as an integrated form of a unique integrative model of Bioregulatory Medicine based on systems biology.</p>
-                        <a href="/about/" class="btn button">Read More</a>
+                        <p class="mb-5">Dr Shakambet graduated as a medical doctor in 1984 and he is a practicing at the Biomedic Centre in London that he founded in 1994. He pioneered Bioregulatory Medicine as an integrated form of a unique integrative model of Bioregulatory Medicine based on systems biology.</p>
+                        <a href="/about/" class="btn button">read more</a>
                     </div>
                 </div>
                 <div class="col-xl-7">
@@ -166,9 +194,9 @@
                         <img class="logo-about" src="~/Content/images/logo-white.png" alt="Biomedic Clinic">
                         <h3>Dr. Damir A Shakambet</h3>
                         <h5>MD, Fellow BSBM</h5>
-                        <h4>Father of <span>bioregulatory medicine</span></h4>
+                        <h4>father of <span>bioregulatory medicine</span></h4>
                         <img class="about-img" src="~/Content/images/dr-damir.png" alt="Dr. Damir A Shakambet, Father of bioregulatory medicine">
-                        <a href="" target="_blank" class="ln-icon">
+                        <a href="https://www.linkedin.com/in/dr-damir-a-shakambet-91396b92" target="_blank" class="ln-icon">
                             <i class="fab fa-linkedin-in"></i>
                         </a>
                     </div>
@@ -181,37 +209,59 @@
         <div class="container">
             <div class="partners-carousel owl-carousel">
                 <div>
-                    <img src="~/Content/images/partners/mirror.png" alt="Mirror" />
+                    <a href="/recent-features/press-release/">
+                        <img src="~/Content/images/partners/mirror.png" alt="Mirror" />
+                    </a>
                 </div>
                 <div>
-                    <img src="~/Content/images/partners/irishtimes.png" alt="the irish times" />
+                    <a href="/recent-features/press-release/">
+                        <img src="~/Content/images/partners/irishtimes.png" alt="the irish times" />
+                    </a>
                 </div>
                 <div>
-                    <img src="~/Content/images/partners/times.png" alt="times" />
+                    <a href="/recent-features/press-release/">
+                        <img src="~/Content/images/partners/times.png" alt="times" />
+                    </a>
                 </div>
                 <div>
-                    <img src="~/Content/images/partners/guardian.png" alt="the guardian" />
+                    <a href="/recent-features/press-release/">
+                        <img src="~/Content/images/partners/guardian.png" alt="the guardian" />
+                    </a>
                 </div>
                 <div>
-                    <img src="~/Content/images/partners/prima.png" alt="prima" />
+                    <a href="/recent-features/press-release/">
+                        <img src="~/Content/images/partners/prima.png" alt="prima" />
+                    </a>
                 </div>
                 <div>
-                    <img src="~/Content/images/partners/elle.png" alt="elle" />
+                    <a href="/recent-features/press-release/">
+                        <img src="~/Content/images/partners/elle.png" alt="elle" />
+                    </a>
                 </div>
                 <div>
-                    <img src="~/Content/images/partners/townsend.png" alt="townsend letter" />
+                    <a href="/recent-features/press-release/">
+                        <img src="~/Content/images/partners/townsend.png" alt="townsend letter" />
+                    </a>
                 </div>
                 <div>
-                    <img src="~/Content/images/partners/cam.png" alt="cam" />
+                    <a href="/recent-features/press-release/">
+                        <img src="~/Content/images/partners/cam.png" alt="cam" />
+                    </a>
                 </div>
                 <div>
-                    <img src="~/Content/images/partners/homeopathy.png" alt="homeopathy" />
+                    <a href="/recent-features/press-release/">
+                        <img src="~/Content/images/partners/homeopathy.png" alt="homeopathy" />
+                    </a>
                 </div>
                 <div>
-                    <img src="~/Content/images/partners/r&e.png" alt="r & e" />
+                    <a href="/recent-features/press-release/">
+                        <img src="~/Content/images/partners/r&e.png" alt="r & e" />
+                    </a>
                 </div>
                 <div>
-                    <img src="~/Content/images/partners/icnm.png" alt="icnm" />
+                    <a href="/recent-features/press-release/">
+                        <img src="~/Content/images/partners/icnm.png" alt="icnm" />
+                    </a>
                 </div>
             </div>
         </div>
@@ -234,10 +284,10 @@
                         </div>
                         <div class="testimonial-hp">
                             <p>"Just a little note to thank you very much for this course (postgraduate course in Bioregulatory Medicine). It is so exciting and interesting, so enlightening what you're teaching, so much what I have been looking for that it is just pure pleasure to listen to you both."</p>
-                            <h4>Dr Isabelel Martineau Bond, MD</h4>
+                            <h4>Dr Isabele Martineau Bond, MD</h4>
                         </div>
                     </div>
-                    <a href="/testimonials/" class="btn button">See All</a>
+                    <a href="/testimonials/" class="btn button">see all</a>
                 </div>
             </div>
         </div>
@@ -250,34 +300,36 @@
                     <div class="contact-box" data-aos="flip-right">
                         <h2 class="title text-center">Contact us</h2>
                         <div class="form-con container-fluid">
-                            <form action="">
-                                <div class="row">
+                            <form action="/leads/contact/sendmessage" data-ajax="true" data-ajax-method="POST" data-ajax-mode="replace" data-ajax-update="#MessageCont" id="contactForm" method="post">
+                                <div class="row" id="MessageCont">
                                     <div class="col-sm-6 px-2">
                                         <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="First Name">
+                                            <input type="text" class="form-control required" name="FirstName" id="FirstName" placeholder="First Name">
                                         </div>
                                     </div>
                                     <div class="col-sm-6 px-2">
                                         <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Last Name">
+                                            <input type="text" class="form-control required" name="LastName" id="LastName" placeholder="Last Name">
                                         </div>
                                     </div>
                                     <div class="col-sm-6 px-2">
                                         <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="E-mail">
+                                            <input type="text" class="form-control required" name="EmailAddress" id="EmailAddress" placeholder="E-mail">
                                         </div>
                                     </div>
                                     <div class="col-sm-6 px-2">
                                         <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Phone number">
+                                            <input type="text" class="form-control required" name="PhoneNumber" id="PhoneNumber" placeholder="Phone number">
                                         </div>
                                     </div>
                                     <div class="col-12 px-2 mb-4">
                                         <div class="form-group">
-                                            <textarea class="form-control" placeholder="Message"></textarea>
+                                            <textarea class="form-control" name="Note" id="Note" placeholder="Note"></textarea>
                                         </div>
                                     </div>
-                                    <div class="col-12 text-center"><button type="submit" class="btn button">Send Email</button></div>
+                                    <div class="col-12 text-center">
+                                        <button type="submit" class="btn button">send email</button>
+                                    </div>
                                 </div>
                             </form>
                         </div>
@@ -303,10 +355,10 @@
                     <address>
                         <div class="row">
                             <div class="col-sm-4">
-                                <a href="tel:4402079356866"><i class="fas fa-mobile-alt"></i> +44 (0)20 7935 6866</a>
+                                <a href="tel:4402079356866"><i class="fas fa-phone-alt"></i> +44 (0)20 7935 6866</a>
                             </div>
                             <div class="col-sm-4">
-                                <a href="tel:4402079356866"><i class="fas fa-phone-alt"></i> +44 (0)20 7935 6866</a>
+                                <a href="tel:4402079351141"><i class="fas fa-fax"></i> +44 (0)20 7935 1141</a>
                             </div>
                             <div class="col-sm-4">
                                 <a href="https://goo.gl/maps/NzwwPRQX7taFqRHY8" target="_blank"><i class="fas fa-map-marker-alt"></i> <span>23 Manchester St, Marylebone, London</span></a>
@@ -320,21 +372,49 @@
 
     @Html.Partial("_FooterPartial")
 
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
-            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-            crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-            crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCZ9ITEowmHPfUzKt0uM8eMCJi4sqKVozs&libraries=places"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/typeit/7.0.3/typeit.min.js" integrity="sha256-xIv5NKvNcqQboib6c/iBCjO8v7kcC0k2LH8ikZFQexE=" crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="~/Content/js/global.js"></script>
-    <script src="~/Content/js/home.js"></script>
+    <script src="~/Scripts/homejs.min.js"></script>
 
+    <script type="application/ld+json">
+        {
+        "@@context": "https://schema.org",
+        "@@type": "MedicalClinic",
+        "name": "Biomedic Clinic",
+        "image": "https://www.biomedic.co.uk/Content/images/logo.png",
+        "@@id": "https://www.biomedic.co.uk/",
+        "url": "https://www.biomedic.co.uk/",
+        "telephone": "+44 (0)20 7935 6866",
+        "address": {
+        "@@type": "PostalAddress",
+        "streetAddress": "23 Manchester Street",
+        "addressLocality": "London",
+        "postalCode": "W1U 4DJ",
+        "addressCountry": "GB"
+        },
+        "geo": {
+        "@@type": "GeoCoordinates",
+        "latitude": 51.5195421,
+        "longitude": -0.1542414
+        },
+        "openingHoursSpecification": [{
+        "@@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday"
+        ],
+        "opens": "09:00",
+        "closes": "21:00"
+        },{
+        "@@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Saturday",
+        "opens": "10:00",
+        "closes": "15:00"
+        }]
+        }
+    </script>
 </body>
 
 </html>

@@ -10,7 +10,9 @@ namespace BiomedicClinic.Core.ViewModels
     {
         public string PageTitle { get; set; }
         public string MetaDescription { get; set; }
+        public string MetaKeywords { get; set; }
         public string ImageToShow { get; set; }
+        public string PageUrl { get; set; }
 
         public IEnumerable<WebsitePage> RelatedPages { get; set; }
 

@@ -28,3 +28,14 @@ AOS.init({
     duration: 1000,
     easing: 'ease-in-out-quart'
 });
+
+$(document).ready(function () {
+    $('#contactForm2').validate({
+        rules: {
+            EmailAddress2: {
+                required: true,
+                email: true
+            }
+        }
+    });
+});

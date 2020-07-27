@@ -31,7 +31,7 @@ namespace BiomedicClinic.Areas.Admin.Controllers
                 SortOrder = m.SortOrder,
                 Template = m.Template == "OnlyTextTemplate" ? "Blank Page" : m.Template,
                 ParentName = m.ParentId > 0 ? _unitOfWork.WebsitePages.GetPageById(m.ParentId).MenuName : ""
-            });
+            }).OrderBy(m => m.SortOrder);
 
             return View(model);
         }
@@ -59,6 +59,16 @@ namespace BiomedicClinic.Areas.Admin.Controllers
             };
 
             return View(model);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteWebsitePage(int PageIdInput)
+        {
+            _unitOfWork.WebsitePages.RemovePage(PageIdInput);
+            _unitOfWork.Complete();
+
+            return RedirectToAction("Index");
         }
 
         [HttpPost]

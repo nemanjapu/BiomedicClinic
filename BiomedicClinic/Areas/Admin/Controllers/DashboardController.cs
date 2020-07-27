@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BiomedicClinic.Core;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -9,10 +10,18 @@ namespace BiomedicClinic.Areas.Admin.Controllers
     [Authorize]
     public class DashboardController : Controller
     {
+        private readonly IUnitOfWork _unitOfWork;
+
+        public DashboardController(IUnitOfWork unitOfWork)
+        {
+            _unitOfWork = unitOfWork;
+        }
+
         // GET: Admin/Dashboard
         public ActionResult Index()
         {
-            return View();
+            var model = _unitOfWork.Leads.GetAllLeads().OrderByDescending(l => l.Date);
+            return View(model);
         }
     }
 }

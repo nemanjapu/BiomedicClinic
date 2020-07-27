@@ -1,0 +1,2 @@
+User-agent: *
+Sitemap: https://www.biomedic.co.uk/sitemap.xml

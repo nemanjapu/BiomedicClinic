@@ -47,7 +47,8 @@
                                             <td>@page.ParentName</td>
                                             <td class="actions">
                                                 <a href="@Url.Action("EditWebsitePage", "PagesManagement", new { @id = page.Id })"><i class="fas fa-pencil-alt"></i></a>
-                                                <a href="" class="delete-row"><i class="far fa-trash-alt"></i></a>
+                                                @*<a href="" class="delete-row"><i class="far fa-trash-alt"></i></a>*@
+                                                <a href="javascript:void(0);" id="DeletePageButton" data-pageid="@page.Id" data-toggle="modal" data-target="#DeletePageModal"><i class="far fa-trash-alt"></i></a>
                                             </td>
                                         </tr>
                                     }
@@ -114,6 +115,8 @@
     </div>
     <!-- end: page -->
 </section>
+
+@Html.Partial("_DeletePagePartial")
 
 @section scripts{
     <script src="~/Areas/Admin/Content/js/website-pages.js"></script>

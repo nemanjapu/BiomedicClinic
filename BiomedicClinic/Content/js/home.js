@@ -9,8 +9,8 @@ $(document).ready(function () {
         nav: true,
         dots: false,
         autoplay: true,
-        animateOut: 'fadeOut',
-        animateIn: 'fadeIn',
+        //animateOut: 'fadeOut',
+        //animateIn: 'fadeIn',
         mouseDrag: false,
         touchDrag: false,
         pullDrag: false,
@@ -36,23 +36,14 @@ $(document).ready(function () {
             }
         },
     });
-    //new TypeIt('.banner-text-con .banner-text h1', {
-    //    speed: 50,
-    //    cursor: false
-    //}).go();
-    var myText = "the biomedic is a medical centre for bioregulatory medicine.";
-    var myWords = myText.split(" ").reverse();
-
-    var ntrvl = setInterval(function () {
-        addNextWord();
-    }, 700);
-    function addNextWord() {
-        var nextWord = myWords.pop();
-        if (nextWord !== undefined) {
-            var textNow = $(".banner-text-con .banner-text h1").text() + " " + nextWord;
-            $(".banner-text-con .banner-text h1").text(textNow);
+    $('#contactForm').validate({
+        rules: {
+            EmailAddress: {
+                required: true,
+                email: true
+            }
         }
-    }
+    });
 });
 
 $(document).scroll(function () {
@@ -71,8 +62,8 @@ function initialize() {
     var map = new google.maps.Map(document.getElementById("map"), {
         mapTypeId: google.maps.MapTypeId.ROADMAP
     });
-    var lat = parseFloat(51.5195454);
-    var lon = parseFloat(-0.1564301);
+    var lat = parseFloat(51.5195421);
+    var lon = parseFloat(-0.154301);
     var defaultBounds = new google.maps.LatLng(lat, lon);
     var image = {
         url: "/Content/images/pin.png",

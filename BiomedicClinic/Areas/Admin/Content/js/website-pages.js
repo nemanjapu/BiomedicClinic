@@ -55,3 +55,8 @@ $("#addWebsitePageForm").submit(function (e) {
 });
 
 // WEBSITE PAGE JS
+
+$(document).delegate('#DeletePageButton', 'click', function () {
+    var PageId = $(this).data('pageid');
+    $('#PageIdInput').val(PageId);
+});

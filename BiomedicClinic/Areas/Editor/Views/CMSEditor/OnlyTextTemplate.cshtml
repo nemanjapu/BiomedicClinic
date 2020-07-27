@@ -50,6 +50,7 @@
                         </div>
                         <div class="col-xl-6 col-sm-4">
                             <aside class="related-pages">
+                                @Html.TextAreaFor(m => m.Content3, new { @id = "editorArea3" })
                                 @foreach (var page in Model.RelatedPages)
                                 {
                                     string pageNewTab = "";

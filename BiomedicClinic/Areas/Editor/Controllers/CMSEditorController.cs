@@ -102,6 +102,7 @@ namespace BiomedicClinic.Areas.Editor.Controllers
 
             websitePageDb.Content1 = model.Content1;
             websitePageDb.Content2 = model.Content2;
+            websitePageDb.Content3 = model.Content3;
 
             _unitOfWork.Complete();
 

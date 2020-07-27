@@ -50,6 +50,9 @@
     <Reference Include="CommonServiceLocator, Version=2.0.1.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
       <HintPath>..\packages\Unity.5.2.0\lib\net47\CommonServiceLocator.dll</HintPath>
     </Reference>
+    <Reference Include="EUCookies, Version=1.0.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\EUCookies.NET.1.0.4\lib\net40\EUCookies.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
@@ -232,7 +235,10 @@
     <Compile Include="Areas\Editor\ViewModels\EditPageContentViewModel.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CMSController.cs" />
+    <Compile Include="Controllers\ContactController.cs" />
+    <Compile Include="Controllers\ImagesManagerController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\PdfDownloadController.cs" />
     <Compile Include="Core\Interfaces\IClientReviewsRepository.cs" />
     <Compile Include="Core\Interfaces\IGlobalSettingsRepository.cs" />
     <Compile Include="Core\Interfaces\ILeadsRepository.cs" />
@@ -260,6 +266,11 @@
     <Compile Include="Core\ViewModels\AccountViewModels.cs" />
     <Compile Include="Core\Models\ApplicationUser.cs" />
     <Compile Include="Core\ViewModels\ManageViewModels.cs" />
+    <Compile Include="Helpers\CmsUrlConstraint.cs" />
+    <Compile Include="Helpers\DropdownHelper.cs" />
+    <Compile Include="Helpers\HtmlActionFilter.cs" />
+    <Compile Include="Helpers\HTMLHelpers.cs" />
+    <Compile Include="Helpers\KeywordStream.cs" />
     <Compile Include="Helpers\UrlCleaner.cs" />
     <Compile Include="Migrations\202005021909037_InitialDatabase.cs" />
     <Compile Include="Migrations\202005021909037_InitialDatabase.Designer.cs">
@@ -278,6 +289,9 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include=".well-known\pki-validation\ca3-40a9ebb7ae2e4e4d8d5249850aac4926.txt" />
+    <Content Include="android-chrome-192x192.png" />
+    <Content Include="apple-touch-icon.png" />
     <Content Include="Areas\Admin\Content\css\all.min.css" />
     <Content Include="Areas\Admin\Content\css\animate.css" />
     <Content Include="Areas\Admin\Content\css\bootstrap-datepicker3.css" />
@@ -714,12 +728,25 @@
     <Content Include="Areas\Editor\Content\ckeditor\styles.js" />
     <Content Include="Areas\Editor\Content\editor.css" />
     <Content Include="Areas\Editor\Content\editor.js" />
+    <Content Include="browserconfig.xml" />
+    <Content Include="Content\aos.css" />
+    <Content Include="Content\blankcss.css" />
+    <Content Include="Content\blankcss.min.css">
+      <DependentUpon>blankcss.css</DependentUpon>
+    </Content>
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-reboot.css" />
     <Content Include="Content\bootstrap-reboot.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\brands.css" />
+    <Content Include="Content\brands.min.css" />
+    <Content Include="Content\cookies_eu.css" />
+    <Content Include="Content\fontawesome-all.css" />
+    <Content Include="Content\fontawesome-all.min.css" />
+    <Content Include="Content\fontawesome.css" />
+    <Content Include="Content\fontawesome.min.css" />
     <Content Include="Content\fonts.css" />
     <Content Include="Content\fonts\montserrat-v14-latin-100.svg" />
     <Content Include="Content\fonts\montserrat-v14-latin-200.svg" />
@@ -736,6 +763,11 @@
     <Content Include="Content\fonts\playfair-display-v20-latin-800.svg" />
     <Content Include="Content\fonts\playfair-display-v20-latin-900.svg" />
     <Content Include="Content\fonts\playfair-display-v20-latin-regular.svg" />
+    <Content Include="Content\homecss.css" />
+    <Content Include="Content\homecss.min.css">
+      <DependentUpon>homecss.css</DependentUpon>
+    </Content>
+    <Content Include="Content\images\!logged-user.jpg" />
     <Content Include="Content\images\banner-flower.jpg" />
     <Content Include="Content\images\banner.jpg" />
     <Content Include="Content\images\bioreg-page-bg.jpg" />
@@ -750,6 +782,57 @@
     <Content Include="Content\images\logo-white.png" />
     <Content Include="Content\images\logo.png" />
     <Content Include="Content\images\logo2.png" />
+    <Content Include="Content\images\media\Canada1.jpg" />
+    <Content Include="Content\images\media\Canada2.JPG" />
+    <Content Include="Content\images\media\Canada3.jpg" />
+    <Content Include="Content\images\media\Damir1.jpg" />
+    <Content Include="Content\images\media\Greece1.JPG" />
+    <Content Include="Content\images\media\Greece2.JPG" />
+    <Content Include="Content\images\media\Greece3.JPG" />
+    <Content Include="Content\images\media\India.jpg" />
+    <Content Include="Content\images\media\Istanbul1.JPG" />
+    <Content Include="Content\images\media\Istanbul2.JPG" />
+    <Content Include="Content\images\media\Istanbul3.JPG" />
+    <Content Include="Content\images\media\Istanbul4.JPG" />
+    <Content Include="Content\images\media\Istanbul5.JPG" />
+    <Content Include="Content\images\media\Istanbul6.jpg" />
+    <Content Include="Content\images\media\Kolkata1.jpg" />
+    <Content Include="Content\images\media\Kolkata2.jpg" />
+    <Content Include="Content\images\media\LaPaz.jpg" />
+    <Content Include="Content\images\media\London2009.jpg" />
+    <Content Include="Content\images\media\mediagallery1.jpg" />
+    <Content Include="Content\images\media\mediagallery10.jpg" />
+    <Content Include="Content\images\media\mediagallery11.jpg" />
+    <Content Include="Content\images\media\mediagallery12.jpg" />
+    <Content Include="Content\images\media\mediagallery13.jpg" />
+    <Content Include="Content\images\media\mediagallery14.jpg" />
+    <Content Include="Content\images\media\mediagallery15.jpg" />
+    <Content Include="Content\images\media\mediagallery16.jpg" />
+    <Content Include="Content\images\media\mediagallery17.jpg" />
+    <Content Include="Content\images\media\mediagallery18.jpg" />
+    <Content Include="Content\images\media\mediagallery19.jpg" />
+    <Content Include="Content\images\media\mediagallery2.jpg" />
+    <Content Include="Content\images\media\mediagallery20.jpg" />
+    <Content Include="Content\images\media\mediagallery21.jpg" />
+    <Content Include="Content\images\media\mediagallery22.jpg" />
+    <Content Include="Content\images\media\mediagallery23.jpg" />
+    <Content Include="Content\images\media\mediagallery24.jpg" />
+    <Content Include="Content\images\media\mediagallery25.jpg" />
+    <Content Include="Content\images\media\mediagallery26.jpg" />
+    <Content Include="Content\images\media\mediagallery27.jpg" />
+    <Content Include="Content\images\media\mediagallery28.jpg" />
+    <Content Include="Content\images\media\mediagallery29.jpg" />
+    <Content Include="Content\images\media\mediagallery3.jpg" />
+    <Content Include="Content\images\media\mediagallery30.jpg" />
+    <Content Include="Content\images\media\mediagallery4.jpg" />
+    <Content Include="Content\images\media\mediagallery5.jpg" />
+    <Content Include="Content\images\media\mediagallery6.jpg" />
+    <Content Include="Content\images\media\mediagallery7.jpg" />
+    <Content Include="Content\images\media\mediagallery8.jpg" />
+    <Content Include="Content\images\media\mediagallery9.jpg" />
+    <Content Include="Content\images\media\SanSalvador.jpg" />
+    <Content Include="Content\images\media\SriLanka.jpg" />
+    <Content Include="Content\images\media\UK2015.jpg" />
     <Content Include="Content\images\page-header-bg.png" />
     <Content Include="Content\images\partners\cam.png" />
     <Content Include="Content\images\partners\elle.png" />
@@ -763,25 +846,85 @@
     <Content Include="Content\images\partners\times.png" />
     <Content Include="Content\images\partners\townsend.png" />
     <Content Include="Content\images\pin.png" />
+    <Content Include="Content\images\press\cam-dark.png" />
+    <Content Include="Content\images\press\cam1.jpg" />
+    <Content Include="Content\images\press\elle-dark.png" />
+    <Content Include="Content\images\press\homeopathy-dark.png" />
+    <Content Include="Content\images\press\icnm-dark.png" />
+    <Content Include="Content\images\press\prima-dark.png" />
+    <Content Include="Content\images\press\prima1.gif" />
+    <Content Include="Content\images\press\r&amp;e-dark.png" />
+    <Content Include="Content\images\press\times-dark.png" />
+    <Content Include="Content\images\press\times1.jpg" />
+    <Content Include="Content\images\press\townsend-dark.png" />
     <Content Include="Content\images\testimonials-bg.jpg" />
+    <Content Include="Content\js\contact.js" />
     <Content Include="Content\js\global.js" />
     <Content Include="Content\js\home.js" />
+    <Content Include="Content\owl.carousel.min.css" />
+    <Content Include="Content\owl.theme.default.min.css" />
     <Content Include="Content\PagedList.css" />
+    <Content Include="Content\regular.css" />
+    <Content Include="Content\regular.min.css" />
+    <Content Include="Content\solid.css" />
+    <Content Include="Content\solid.min.css" />
     <Content Include="Content\style.css" />
     <Content Include="Content\styleinner.css" />
+    <Content Include="Content\svg-with-js.css" />
+    <Content Include="Content\svg-with-js.min.css" />
     <Content Include="Content\toastr.css" />
     <Content Include="Content\toastr.min.css" />
+    <Content Include="Content\v4-shims.css" />
+    <Content Include="Content\v4-shims.min.css" />
+    <Content Include="DynamicContent\PagesImages\contact.jpg" />
+    <Content Include="DynamicContent\PagesImages\Practicioners.jpg" />
+    <Content Include="DynamicContent\PagesImages\pressReleases.jpg" />
+    <Content Include="DynamicContent\PagesImages\publications.jpg" />
+    <Content Include="DynamicContent\PagesImages\testimonials.jpg" />
+    <Content Include="DynamicContent\PagesImages\videoMedia.jpg" />
+    <Content Include="favicon-16x16.png" />
+    <Content Include="favicon-32x32.png" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="mstile-150x150.png" />
+    <Content Include="robots.txt" />
+    <Content Include="Scripts\aos.js" />
+    <Content Include="Scripts\blankpagejs.js" />
+    <Content Include="Scripts\blankpagejs.min.js">
+      <DependentUpon>blankpagejs.js</DependentUpon>
+    </Content>
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\contactpagejs.js" />
+    <Content Include="Scripts\contactpagejs.min.js">
+      <DependentUpon>contactpagejs.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\cookies_eu.js" />
     <Content Include="Scripts\esm\popper-utils.js" />
     <Content Include="Scripts\esm\popper-utils.min.js" />
     <Content Include="Scripts\esm\popper.js" />
     <Content Include="Scripts\esm\popper.min.js" />
+    <Content Include="Scripts\fontawesome\all.js" />
+    <Content Include="Scripts\fontawesome\all.min.js" />
+    <Content Include="Scripts\fontawesome\brands.js" />
+    <Content Include="Scripts\fontawesome\brands.min.js" />
+    <Content Include="Scripts\fontawesome\conflict-detection.js" />
+    <Content Include="Scripts\fontawesome\conflict-detection.min.js" />
+    <Content Include="Scripts\fontawesome\fontawesome.js" />
+    <Content Include="Scripts\fontawesome\fontawesome.min.js" />
+    <Content Include="Scripts\fontawesome\regular.js" />
+    <Content Include="Scripts\fontawesome\regular.min.js" />
+    <Content Include="Scripts\fontawesome\solid.js" />
+    <Content Include="Scripts\fontawesome\solid.min.js" />
+    <Content Include="Scripts\fontawesome\v4-shims.js" />
+    <Content Include="Scripts\fontawesome\v4-shims.min.js" />
+    <Content Include="Scripts\homejs.js" />
+    <Content Include="Scripts\homejs.min.js">
+      <DependentUpon>homejs.js</DependentUpon>
+    </Content>
     <Content Include="Scripts\index.js.flow" />
     <Content Include="Scripts\esm\popper.min.js.map" />
     <Content Include="Scripts\esm\popper.js.map" />
@@ -906,13 +1049,30 @@
     <Content Include="Areas\Editor\Content\ckeditor\samples\toolbarconfigurator\lib\codemirror\LICENSE" />
     <Content Include="Areas\Editor\Content\ckeditor\skins\moono-lisa\readme.md" />
     <Content Include="Areas\Admin\Views\GlobalSettings\Index.cshtml" />
+    <Content Include="Areas\Editor\Views\CMSEditor\Contact.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\_DeletePagePartial.cshtml" />
+    <Content Include="Areas\Editor\Views\CMSEditor\MediaTemplate.cshtml" />
+    <Content Include="Areas\Editor\Views\CMSEditor\PressTemplate.cshtml" />
+    <None Include="bundleconfig.json" />
+    <Content Include="DynamicContent\pdf\assesmform.pdf" />
+    <Content Include="Content\images\press\cam2.pdf" />
+    <Content Include="Content\images\press\elle1.pdf" />
+    <Content Include="Content\images\press\homeopathy1.pdf" />
+    <Content Include="Content\images\press\icnm1.pdf" />
+    <Content Include="Content\images\press\icnm2.pdf" />
+    <Content Include="Content\images\press\r&amp;e1.pdf" />
+    <Content Include="Content\images\press\townsend1.pdf" />
+    <Content Include="Content\images\press\townsend2.pdf" />
+    <Content Include="Content\images\press\townsend3.pdf" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
+    <Content Include="safari-pinned-tab.svg" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
     <Content Include="Scripts\jquery-3.3.1.slim.js" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.cookie.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
@@ -920,6 +1080,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\owl.carousel.min.js" />
     <Content Include="Scripts\popper-utils.js" />
     <Content Include="Scripts\popper-utils.min.js" />
     <Content Include="Scripts\popper.js" />
@@ -989,6 +1150,7 @@
     <Content Include="Scripts\src\utils\setupEventListeners.js" />
     <Content Include="Scripts\toastr.js" />
     <Content Include="Scripts\toastr.min.js" />
+    <Content Include="Scripts\typeit.min.js" />
     <Content Include="Scripts\umd\popper-utils.js" />
     <Content Include="Scripts\umd\popper-utils.min.js" />
     <Content Include="Scripts\umd\popper.js" />
@@ -1039,11 +1201,33 @@
     <Content Include="Views\Shared\_FooterPartial.cshtml" />
     <Content Include="Views\Shared\_TopMenuPartial.cshtml" />
     <Content Include="Views\CMS\OnlyTextTemplate.cshtml" />
+    <Content Include="webfonts\fa-solid-900.woff2" />
+    <Content Include="webfonts\fa-solid-900.woff" />
+    <Content Include="webfonts\fa-solid-900.ttf" />
+    <Content Include="webfonts\fa-solid-900.svg" />
+    <Content Include="webfonts\fa-solid-900.eot" />
+    <Content Include="webfonts\fa-regular-400.woff2" />
+    <Content Include="webfonts\fa-regular-400.woff" />
+    <Content Include="webfonts\fa-regular-400.ttf" />
+    <Content Include="webfonts\fa-regular-400.svg" />
+    <Content Include="webfonts\fa-regular-400.eot" />
+    <Content Include="webfonts\fa-brands-400.woff2" />
+    <Content Include="webfonts\fa-brands-400.woff" />
+    <Content Include="webfonts\fa-brands-400.ttf" />
+    <Content Include="webfonts\fa-brands-400.svg" />
+    <Content Include="webfonts\fa-brands-400.eot" />
+    <Content Include="site.webmanifest" />
+    <Content Include="Views\CMS\Contact.cshtml" />
+    <Content Include="Views\Shared\_SocialMediaPartial.cshtml" />
+    <Content Include="Views\ImagesManager\Index.cshtml" />
+    <Content Include="Views\CMS\ParentTemplate.cshtml" />
+    <Content Include="Views\CMS\PressTemplate.cshtml" />
+    <Content Include="Views\CMS\MediaTemplate.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Views\WebistePagesApi\" />
-    <Folder Include="DynamicContent\PagesImages\" />
+    <Folder Include="DynamicContent\UploadedImages\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -1101,7 +1285,9 @@
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\BuildBundlerMinifier.3.2.447\build\BuildBundlerMinifier.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\BuildBundlerMinifier.3.2.447\build\BuildBundlerMinifier.targets'))" />
   </Target>
+  <Import Project="..\packages\BuildBundlerMinifier.3.2.447\build\BuildBundlerMinifier.targets" Condition="Exists('..\packages\BuildBundlerMinifier.3.2.447\build\BuildBundlerMinifier.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
