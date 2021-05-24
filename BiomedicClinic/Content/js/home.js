@@ -18,7 +18,8 @@ $(document).ready(function () {
     });
     $('.partners-carousel').owlCarousel({
         loop: true,
-        nav: false,
+        nav: true,
+        navText: ['<i class="fas fa-arrow-circle-left"></i>','<i class="fas fa-arrow-circle-right"></i>'],
         dots: false,
         autoplay: true,
         mouseDrag: false,

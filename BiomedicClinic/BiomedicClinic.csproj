@@ -851,6 +851,9 @@
     <Content Include="Content\images\press\elle-dark.png" />
     <Content Include="Content\images\press\homeopathy-dark.png" />
     <Content Include="Content\images\press\icnm-dark.png" />
+    <Content Include="Content\images\press\irish-times.jpg" />
+    <Content Include="Content\images\press\irishtimes-dark.png" />
+    <Content Include="Content\images\press\mirror-dark.png" />
     <Content Include="Content\images\press\prima-dark.png" />
     <Content Include="Content\images\press\prima1.gif" />
     <Content Include="Content\images\press\r&amp;e-dark.png" />
@@ -1064,6 +1067,7 @@
     <Content Include="Content\images\press\townsend1.pdf" />
     <Content Include="Content\images\press\townsend2.pdf" />
     <Content Include="Content\images\press\townsend3.pdf" />
+    <Content Include="Content\images\press\r&amp;e2.pdf" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <Content Include="safari-pinned-tab.svg" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
@@ -1226,7 +1230,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Admin\Views\WebistePagesApi\" />
     <Folder Include="DynamicContent\UploadedImages\" />
   </ItemGroup>
   <ItemGroup>

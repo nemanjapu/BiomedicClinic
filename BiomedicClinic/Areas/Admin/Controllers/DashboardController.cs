@@ -1,4 +1,5 @@
 ﻿using BiomedicClinic.Core;
+using PagedList;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,9 +19,11 @@ namespace BiomedicClinic.Areas.Admin.Controllers
         }
 
         // GET: Admin/Dashboard
-        public ActionResult Index()
+        public ActionResult Index(int? page)
         {
-            var model = _unitOfWork.Leads.GetAllLeads().OrderByDescending(l => l.Date);
+            int pageSize = 10;
+            int pageNumber = (page ?? 1);
+            var model = _unitOfWork.Leads.GetAllLeads().OrderByDescending(l => l.Date).ToPagedList(pageNumber, pageSize);
             return View(model);
         }
     }

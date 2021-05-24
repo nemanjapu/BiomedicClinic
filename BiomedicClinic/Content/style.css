@@ -1018,6 +1018,20 @@ h2.title {
     padding: 100px 0;
 }
 
+.partners-carousel .owl-nav {
+    text-align: right;
+    color: #fff;
+    font-size: 25px;
+    padding-top: 15px;
+    position: absolute;
+    right: 0;
+    top: 100%;
+}
+
+.partners-carousel.owl-carousel .owl-nav button.owl-prev{
+    margin-right: 10px;
+}
+
 /*TESTIMONIALS*/
 
 .testimonials-hp {

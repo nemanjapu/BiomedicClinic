@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.Mvc;
 using System.Xml.Linq;
@@ -103,7 +104,7 @@ namespace BiomedicClinic.Controllers
         //[HtmlActionFilter]
         public ActionResult ReturnCMSPage(string url)
         {
-            //IF WE'RE CALLING FOR HOMEPAGE URL WOULD BE NULL, SO WE'RE SETTING IT TO JUST AN EMPTY STRING
+            //IF WE'RE CALLING FOR HOMEPAGE, URL WOULD BE NULL, SO WE'RE SETTING IT TO JUST AN EMPTY STRING
             //if (String.IsNullOrEmpty(url))
             //{
             //    url = "";
@@ -125,6 +126,25 @@ namespace BiomedicClinic.Controllers
             //{
             //    return Redirect("/");
             //}
+
+            //if (!string.IsNullOrEmpty(websitePageDB.Content1))
+            //{
+            //    //replace non-ascii with empty string
+            //    websitePageDB.Content1 = Regex.Replace(websitePageDB.Content1, @"[^\u0000-\u007F]", string.Empty);
+
+            //    //replace 3 or more BR with one BR
+            //    websitePageDB.Content1 = Regex.Replace(websitePageDB.Content1, "(?:\\s*<br[/\\s]*>\\s*){3,}", "");
+
+            //    //remove any style attributes   
+            //    websitePageDB.Content1 = Regex.Replace(websitePageDB.Content1, " style=(\"|')[^(\"|')]*(\"|')", "");
+
+            //    //remove empty p tags
+            //    websitePageDB.Content1 = Regex.Replace(websitePageDB.Content1, "(<p>\\s*</p>|<p>\\s*​\\?</p>|<p>&nbsp;</p>)", "<br>");
+
+            //    //remove font tags
+            //    websitePageDB.Content1 = Regex.Replace(websitePageDB.Content1, "</?(font)[^>]*>", "");
+            //}
+
             var websitePageToRedirectTo = new PageContentViewModel()
             {
                 Content1 = websitePageDB.Content1,

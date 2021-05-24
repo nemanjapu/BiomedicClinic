@@ -1,4 +1,5 @@
-﻿@model IEnumerable<BiomedicClinic.Core.Models.Lead>
+﻿@model PagedList.IPagedList<BiomedicClinic.Core.Models.Lead>
+@using PagedList.Mvc;
 @{
     ViewBag.Title = "Dashboard";
 }
@@ -23,15 +24,16 @@
 
             @foreach (var lead in Model)
             {
-            <tr>
-                <td>@lead.Date</td>
-                <td>@lead.FirstName @lead.LastName</td>
-                <td>@lead.EmailAddress</td>
-                <td>@lead.PhoneNumber</td>
-                <td>@lead.Note</td>
-            </tr>
+                <tr>
+                    <td>@lead.Date</td>
+                    <td>@lead.FirstName @lead.LastName</td>
+                    <td>@lead.EmailAddress</td>
+                    <td>@lead.PhoneNumber</td>
+                    <td>@lead.Note</td>
+                </tr>
             }
         </tbody>
     </table>
+    @Html.PagedListPager(Model, page => Url.Action("Index", new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))
     <!-- end: page -->
 </section>
